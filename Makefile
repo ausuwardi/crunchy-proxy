@@ -12,7 +12,7 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-.PHONY: all build clean clean-docs docs docker docker-push resolve install release run default
+.PHONY: all build clean clean-docs docs docker docker-push install release run default
 
 all: clean resolve build
 
@@ -34,10 +34,6 @@ clean:
 	@rm -rf $(DIST_DIR)
 	@rm -rf $(VENDOR_DIR)
 	@go clean -i
-
-resolve:
-	@echo "Resolving depenencies..."
-	@glide up
 
 build:
 	@echo "Building project..."
